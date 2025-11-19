@@ -1,9 +1,7 @@
-FROM v2fly/v2fly-core:latest
+FROM teddysun/xray:latest
 
-RUN mkdir -p /etc/v2ray
-
-COPY config.json /etc/v2ray/config.json
+COPY config.json /etc/xray/config.json
 
 EXPOSE 8080
 
-ENTRYPOINT ["v2ray", "run", "-config=/etc/v2ray/config.json"]
+ENTRYPOINT ["/usr/bin/xray", "-config", "/etc/xray/config.json"]
