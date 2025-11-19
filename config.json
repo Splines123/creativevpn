@@ -1,20 +1,16 @@
 {
   "log": {
-    "access": "/var/log/xray/access.log",
-    "error": "/var/log/xray/error.log",
-    "loglevel": "warning"
+    "loglevel": "info"
   },
   "inbounds": [
     {
       "port": 8080,
-      "listen": "0.0.0.0",
       "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "id": "b3d2f6e4-9a1c-4f2b-8c3d-7e6a5b4c3d2e",
-            "level": 0,
-            "email": "user@creativevpn"
+            "id": "b8b92e9b-9ea7-4528-893e-07bd907e7df2",
+            "flow": "none"
           }
         ],
         "decryption": "none"
@@ -22,19 +18,14 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/_hidden_api"
+          "path": "/creativevpn"
         }
-      },
-      "sniffing": {
-        "enabled": true,
-        "destOverride": ["http", "tls"]
       }
     }
   ],
   "outbounds": [
     {
-      "protocol": "freedom",
-      "settings": {}
+      "protocol": "freedom"
     }
   ]
 }
